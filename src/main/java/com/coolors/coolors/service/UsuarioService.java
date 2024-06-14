@@ -14,6 +14,7 @@ public class UsuarioService {
 
     public ResponseEntity<?> criarUsuario(Usuario usuario){
         try{
+            usuario.setSenha(usuario.getSenha());
             repository.save(usuario);
             return ResponseEntity.ok(HttpStatus.OK);
         }catch (Exception e){
